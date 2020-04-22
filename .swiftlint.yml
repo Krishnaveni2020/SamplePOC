@@ -1,0 +1,26 @@
+disabled_rules:
+- colon
+- trailing_whitespace
+- opening_brace
+- function_body_length
+- type_body_length
+- function_parameter_count
+- file_length
+- large_tuple
+- line_length
+- todo
+- notification_center_detachment
+- unused_closure_parameter
+- redundant_string_enum_value
+- redundant_void_return
+- unused_optional_binding
+- void_return
+excluded:
+  - Pods
+  - SamplePOC/Resources/Reachability.swift
+  
+identifier_name:
+  allowed_symbols: "_"
+  excluded:
+    - id
+reporter: "xcode"
