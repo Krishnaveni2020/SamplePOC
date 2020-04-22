@@ -48,7 +48,6 @@ class ViewController: UIViewController {
     // MARK: - Closure initialize
     func closureSetUp() {
         viewModel.reloadList = { [weak self] ()  in
-            ///UI chnages in main tread
             DispatchQueue.main.async {
                 self?.listTableView.reloadData()
             }

@@ -15,12 +15,18 @@ disabled_rules:
 - redundant_void_return
 - unused_optional_binding
 - void_return
-excluded:
-  - Pods
-  - SamplePOC/Resources/Reachability.swift
-  
+
 identifier_name:
-  allowed_symbols: "_"
-  excluded:
-    - id
-reporter: "xcode"
+    allowed_symbols: "_"
+    min_length: 1
+    max_length:
+      warning: 90
+      error: 1000
+    excluded:
+      - id
+    validates_start_with_lowercase: false
+
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit)
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods

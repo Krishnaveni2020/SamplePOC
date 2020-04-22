@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import Reachability
 
 class ViewModel {
     
@@ -17,7 +18,6 @@ class ViewModel {
     
     // MARK: - Array of List Model class
     var dataModelArr : [DataModel] = []{
-        ///Reload data when data set
         didSet{
             reloadList()
         }
@@ -25,14 +25,15 @@ class ViewModel {
     
     // MARK: - Class veriables
     var mainData : MainData?
-    let rechability = Reachability()
     
     // MARK: - API Service Call
     func getServicecall() {
         
-        if let reachability = Reachability(), !reachability.isReachable {
-            self.errorMessage("Check Your Internet Connection!!!")
-        } else {
+        NetworkManager.isUnreachable { networkManagerInstance in
+          self.errorMessage("Check Your Internet Connection!!!")
+            return
+        }
+        
             VKAPIs.shared.getRequest(httpMethod: .GET) { (resultObject, success, error) in
                 if success == true
                 {
@@ -59,7 +60,5 @@ class ViewModel {
                 }
                 
             }
-        }
-        
     }
 }

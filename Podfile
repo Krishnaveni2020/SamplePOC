@@ -9,6 +9,7 @@ target 'SamplePOC' do
   pod 'SwiftLint',  '~> 0.36.0'
   pod 'Kingfisher', '~> 5.0'
   pod 'SnapKit', '~> 5.0.0'
+  pod 'ReachabilitySwift'
   target 'SamplePOCTests' do
     inherit! :search_paths
     # Pods for testing
