@@ -22,7 +22,7 @@ class DisplayDataCell: UITableViewCell {
             if let discriptionTitle = dataItem.description {
                 if discriptionTitle == "" {
                     descriptionLabel.text = " "
-                }else{
+                } else {
                     descriptionLabel.text = " \(discriptionTitle) "
                 }
                      
@@ -68,8 +68,7 @@ class DisplayDataCell: UITableViewCell {
            label.translatesAutoresizingMaskIntoConstraints = false
            return label
        }()
-       
-      
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -110,8 +109,7 @@ class DisplayDataCell: UITableViewCell {
             make.bottom.equalTo(containerView)
         }
         descriptionLabel.numberOfLines = 0
-        
-        
+                
     }
         override func prepareForReuse() {
            super.prepareForReuse()
@@ -122,7 +120,6 @@ class DisplayDataCell: UITableViewCell {
            
            super.init(coder: aDecoder)
        }
-
 
 }
 
